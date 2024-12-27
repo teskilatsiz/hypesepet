@@ -15,14 +15,12 @@ export function useUrunDuzenle(urunId: string) {
 
     setYukleniyor(true);
     try {
-      // Eski verileri al
       const { data: eskiUrun } = await supabase
         .from('urunler')
         .select('*')
         .eq('id', urunId)
         .single();
 
-      // Değişiklikleri kaydet
       const { error: guncelleHata } = await supabase
         .from('urunler')
         .update(yeniVeriler)
@@ -30,7 +28,6 @@ export function useUrunDuzenle(urunId: string) {
 
       if (guncelleHata) throw guncelleHata;
 
-      // Değişiklik geçmişini kaydet
       const { error: gecmisHata } = await supabase
         .from('urun_duzenlemeleri')
         .insert({
