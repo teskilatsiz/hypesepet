@@ -49,7 +49,6 @@ function Bildirimler() {
         prev.map(b => b.id === bildirim.id ? { ...b, okundu: true } : b)
       );
 
-      // Mesaj bildirimi ise mesajlar sayfasına yönlendir
       if (bildirim.tip === 'mesaj' && bildirim.veri?.sohbet_id) {
         navigate(`/mesajlar?sohbet=${bildirim.veri.sohbet_id}`);
       }
