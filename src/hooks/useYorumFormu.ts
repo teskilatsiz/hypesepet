@@ -23,7 +23,7 @@ export function useYorumFormu() {
     setYukleniyor(true);
 
     try {
-      // Yorumu ekle
+
       const { data: yorum, error: yorumHata } = await supabase
         .from('yorumlar')
         .insert({
@@ -37,7 +37,6 @@ export function useYorumFormu() {
 
       if (yorumHata) throw yorumHata;
 
-      // Görselleri yükle
       if (gorseller.length > 0) {
         const gorselPromises = gorseller.map(async (gorsel) => {
           const dosyaAdi = `${Date.now()}-${gorsel.name}`;
