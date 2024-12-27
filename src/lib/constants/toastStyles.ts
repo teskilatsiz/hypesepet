@@ -1,6 +1,5 @@
 import { CheckCircle, XCircle, Info } from 'lucide-react';
 
-// Base toast style
 const baseToastStyle = {
   padding: '16px',
   borderRadius: '12px',
@@ -9,7 +8,6 @@ const baseToastStyle = {
   color: '#374151',
 };
 
-// Toast variants
 export const toastStyles = {
   success: {
     style: {
@@ -34,7 +32,6 @@ export const toastStyles = {
   },
 };
 
-// Toast configuration
 export const toastConfig = {
   duration: 3000,
   position: 'top-center',
